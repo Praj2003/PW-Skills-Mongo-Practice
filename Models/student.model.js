@@ -1,10 +1,24 @@
 const mongoose = require('mongoose');
 
-const studentSchema = new mongoose.Schema({
-    name : String,
-    age : Number,
-    Qualification : String
+//Defining the schema
 
+const parentSchema = new mongoose.Schema({
+    fatherName : {
+        type : String,
+        
+        required : true
+    },
+
+    motherName : {
+        type : String,
+        
+        required : true
+    },
+
+    dob : {
+        type : Date,
+
+    }
 })
 
-module.exports = mongoose.model("Student Details",studentSchema)
+module.exports = mongoose.model("PersonalDetails",parentSchema);
